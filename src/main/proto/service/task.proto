@@ -1,0 +1,57 @@
+syntax = "proto3";
+
+package br.com.lepsistemas.proto.service;
+
+import "common/messages.proto";
+
+option java_multiple_files = true;
+option java_package = "br.com.lepsistemas.proto.service.task";
+option objc_class_prefix = "LS";
+
+service TaskService {
+
+  rpc Create(CreateTaskRequest) returns (CreateTaskResponse);
+
+  rpc List(ListTaskRequest) returns (ListTaskResponse);
+
+  rpc Get(GetTaskRequest) returns (GetTaskResponse);
+
+  rpc Complete(CompleteTaskRequest) returns (CompleteTaskResponse);
+
+}
+
+message CreateTaskRequest {
+  string name = 1;
+}
+
+message CreateTaskResponse {
+  common.Task task = 1;
+}
+
+message ListTaskRequest {
+  TaskStatus status = 1;
+}
+
+enum TaskStatus {
+  ALL = 0;
+  COMPLETED = 1;
+  NOT_COMPLETED = 2;
+}
+
+message ListTaskResponse {
+  repeated common.Task tasks = 1;
+}
+
+message GetTaskRequest {
+  string id = 1;
+}
+
+message GetTaskResponse {
+  common.Task task = 1;
+}
+
+message CompleteTaskRequest {
+  string id = 1;
+}
+
+message CompleteTaskResponse {}
