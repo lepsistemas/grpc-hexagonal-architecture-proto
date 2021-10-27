@@ -20,7 +20,6 @@
         <connection>scm:git:${project.scm.url}</connection>
         <developerConnection>scm:git:${project.scm.url}</developerConnection>
         <url>git@${project.scm.id}:lepsistemas/grpc-hexagonal-architecture-proto.git</url>
-        <tag>1.0.2</tag>
     </scm>
 
     <build>
