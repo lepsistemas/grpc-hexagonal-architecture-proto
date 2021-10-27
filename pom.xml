@@ -14,7 +14,6 @@
         <maven-release-plugin.version>2.5.3</maven-release-plugin.version>
         <!--suppress UnresolvedMavenProperty -->
         <project.scm.id>${env.PROJECT_SCM_ID}</project.scm.id>
-        <spring-boot.repackage.skip>true</spring-boot.repackage.skip>
     </properties>
 
     <scm>
